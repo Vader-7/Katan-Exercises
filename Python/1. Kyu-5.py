@@ -7,7 +7,10 @@ The most outer function represents the left operand, the most inner function rep
 Division should be integer division. For example, this should return 2, not 2.666666...
 """
 
-#code by Tyler
+# code by Tyler
+
+import math
+
 
 def zero(a=None):
     if a == None:
@@ -80,25 +83,19 @@ def nine(a=None):
 
 
 def plus(a):
-    def b(b):
-        return a+b
-    return b
+    return lambda b: a + b
+
 
 def minus(a):
-    def b(b):
-        return b-a
-    return b
+    return lambda b: b - a
+
 
 def times(a):
-    def b(b):
-        return a*b
-    return b
+    return lambda b: a * b
 
 
 def divided_by(a):
-    def b(b):
-        return b/a
-    return b
+    return lambda b: math.floor(b / a)
 
 
 print(seven(times(five())))
