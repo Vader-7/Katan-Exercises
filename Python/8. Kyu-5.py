@@ -11,5 +11,15 @@ Empty list is considered to have zero greatest sum. Note that the empty list or 
 def max_sequence(arr):
     if len(arr) == 0:
         return 0
+    elif all(i < 0 for i in arr):
+        return 0
     else:
-        return max([sum(arr[i:i+j]) for i in range(len(arr)) for j in range(len(arr)-i+1)])
+        max_sum = float("-inf")
+        curr_sum = 0
+        for num in arr:
+            curr_sum += num
+            max_sum = max(max_sum, curr_sum)
+            if curr_sum < 0:
+                curr_sum = 0
+        return max_sum
+
