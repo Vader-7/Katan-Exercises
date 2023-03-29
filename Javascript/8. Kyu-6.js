@@ -17,9 +17,6 @@ function alphabetPosition(text) {
         arrPositions = arr.map(elem => elem.charCodeAt(0) - 'a'.charCodeAt(0) + 1);
         return arrPositions.join(' ');
     }
-    else {
-        console.log('it has a number in it')
-    }
 }
 
 
